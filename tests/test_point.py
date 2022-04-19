@@ -37,5 +37,4 @@ def test_point_closest_pair():
 # Test the covex hull method
 def test_point_convex_hull():
     points = [Point(1, 2), Point(3, 4), Point(5, 6), Point(7, 8), Point(6, 2), Point(4, 3)]
-    print(Point.convex_hull(points))
-    assert Point.convex_hull(points) == [Point(1, 2), Point(3, 4), Point(5, 6), Point(7, 8)]
+    assert Point.convex_hull(points) == [Point(1, 2), Point(3, 4), Point(5, 6), Point(7, 8), Point(2,6)]
