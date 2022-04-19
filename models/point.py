@@ -13,6 +13,10 @@ class Point:
     def __repr__(self) -> str:
         return "Point({}, {})".format(self.x, self.y)
 
+    # Point equality
+    def __eq__(self, other) -> bool:
+        return self.x == other.x and self.y == other.y
+
     # Calculate the distance from a point to itself
     def distance_from_point(self, point) -> float:
         return ((self.x - point.x) ** 2 + (self.y - point.y) ** 2) ** 0.5
