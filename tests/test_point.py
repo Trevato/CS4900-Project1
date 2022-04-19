@@ -25,3 +25,9 @@ def test_point_repr():
 def test_point_distance_from_point():
     point = Point(1, 2)
     assert point.distance_from_point(point) == 0
+
+
+# Given a set of points, find the closest pair of points
+def test_point_closest_pair():
+    points = [Point(1, 2), Point(3, 4), Point(5, 6), Point(7, 8)]
+    assert Point.closest_pair(points) == (Point(1, 2), Point(3, 4))
