@@ -53,3 +53,41 @@ class Point:
 
         # Return the closest pair of points
         return closest_pair
+
+
+    # Function: convex_hull
+    # function that takes a set of points and returns the smallest
+    # convex polyhedron/polygon containing all the points,
+    # represented as the set of points on the polygon edge.
+
+    # Implement the gift wrapping algorithm as seen here:
+    # https://en.wikipedia.org/wiki/Gift_wrapping_algorithm
+    # TODO: Fix this function
+    @staticmethod
+    def convex_hull(points: list) -> list:
+        # Sort the points by x coordinate
+        points.sort(key=lambda point: point.x)
+
+        # Initialize the convex hull to be the first two points
+        convex_hull = [points[0], points[1]]
+
+        # Loop through the points
+        for i in range(2, len(points)):
+            # Initialize the current point
+            current_point = points[i]
+
+            # Initialize the last point in the convex hull
+            last_point = convex_hull[-1]
+
+            # Initialize the previous point in the convex hull
+            previous_point = convex_hull[-2]
+
+            # If the current point is to the left of the line
+            # formed by the last and previous points, add the current point
+            # to the convex hull
+            if (current_point.x - last_point.x) * (current_point.y - previous_point.y) - \
+                    (current_point.y - last_point.y) * (current_point.x - previous_point.x) < 0:
+                convex_hull.append(current_point)
+
+        # Return the convex hull
+        return convex_hull

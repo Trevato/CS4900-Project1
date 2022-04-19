@@ -31,3 +31,11 @@ def test_point_distance_from_point():
 def test_point_closest_pair():
     points = [Point(1, 2), Point(3, 4), Point(5, 6), Point(7, 8)]
     assert Point.closest_pair(points) == (Point(1, 2), Point(3, 4))
+
+
+# TODO: Fix conevex_hull
+# Test the covex hull method
+def test_point_convex_hull():
+    points = [Point(1, 2), Point(3, 4), Point(5, 6), Point(7, 8), Point(6, 2), Point(4, 3)]
+    print(Point.convex_hull(points))
+    assert Point.convex_hull(points) == [Point(1, 2), Point(3, 4), Point(5, 6), Point(7, 8)]
